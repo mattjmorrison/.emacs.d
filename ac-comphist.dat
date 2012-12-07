@@ -1,0 +1,16 @@
+((("load-file" .
+   [1 0 0 0 0 0 0 0 0])
+  ("assertEqual" .
+   [0 0 1 0 0 0 1 0 0 0 0])
+  ("fib" .
+   [0 0 1])
+  ("original_raw_response" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 \.\.\.])
+  ("None" .
+   [1 0 0 0])
+  ("rope-extract-method" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 \.\.\.])
+  ("require" .
+   [1 0 0 0 0 0 0])
+  ("epy-flake8" .
+   [1 0 0 0 0 0 0 0 0 0])))

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+<title>Pymacs — Notes</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Pymacs — Notes"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-11-08T08:33-0500"/>
+<meta name="author" content="François Pinard"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+
+<link rel="stylesheet" type="text/css" href="/org/gabarit.css">
+<link rel="stylesheet" type="text/css" href="/org/org-default.css">
+
+
+</head>
+<body>
+
+<div id="preamble">
+<div class="title"><h3>Pymacs framework</h3></div>
+</div>
+
+<div id="content" class="body">
+<h1 class="title">Pymacs — Notes</h1>
+
+
+<link type="text/css" rel="stylesheet" href="/org/jquery.tocify.css" />
+<link type="text/css" rel="stylesheet" href="/script/jquery-ui.css" />
+
+<script src="/script/jquery.js" type="text/javascript"></script>
+<script src="/script/jquery-ui.js" type="text/javascript"></script>
+<script src="/org/jquery.tocify.js" type="text/javascript" charset="utf-8"></script>
+
+<div id="index">
+</div>
+
+<script>
+$(function() {
+    $("#table-of-contents").remove();
+    $("#target").html("");
+    var toc = $("#index").tocify({ selectors: "h2, h3, h4, h5" }).data("tocify");
+    // prettyPrint();
+    // $(".optionName").popover({ trigger: "hover" });
+    $("a[href='#']").click(function(event) {
+        event.preventDefault();
+    });
+});
+</script>
+
+
+
+<div id="table-of-contents">
+<h2>Sommaire</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 .</a>
+<ul>
+<li><a href="#sec-1-1">1.1 Notes for 0.25</a></li>
+<li><a href="#sec-1-2">1.2 Notes for 0.24</a></li>
+<li><a href="#sec-1-3">1.3 Notes for 0.23</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2 Informal notes</a>
+<ul>
+<li><a href="#sec-2-1">2.1 &lt;&gt; python-mode.el difficulty</a></li>
+<li><a href="#sec-2-2">2.2 &lt;&gt; Using packagers</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> .</h2>
+<div class="outline-text-2" id="text-1">
+
+
+<blockquote>
+
+<p>Known translations
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">Document</th><th scope="col" class="left">Language</th><th scope="col" class="left">Translator</th><th scope="col" class="left">Date</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">This file</td><td class="left"><a href="http://www.movavi.com/opensource/pymacs-be">Belorussian</a></td><td class="left"><a href="mailto:bukhovko@gmail.com">Paul Bukhovko</a></td><td class="left"></td></tr>
+<tr><td class="left">This file</td><td class="left"><a href="http://uhrenstore.de/blog/readmedateifurpymacs">German</a></td><td class="left"><a href="mailto:romanova.anastasyia@gmail.com">Anastasiya Romanova</a></td><td class="left"><span class="timestamp-wrapper"> <span class="timestamp">2012-04-09</span></span></td></tr>
+<tr><td class="left">Pymacs manual</td><td class="left"><a href="http://webhostinggeeks.com/science/pymacs-framework-ro">Romanian</a></td><td class="left"><a href="mailto:alovsov@gmail.com">Alexander Ovsov</a></td><td class="left"></td></tr>
+</tbody>
+</table>
+
+
+</blockquote>
+
+
+<p>
+Pymacs is a powerful tool which, once started from Emacs, allows both-way communication between Emacs Lisp and Python.  Pymacs aims Python as an extension language for Emacs rather than the other way around, and this asymmetry is reflected in some design choices.  Within Emacs Lisp code, one may load and use Python modules.  Python functions may themselves use Emacs services, and handle Emacs Lisp objects kept in Emacs Lisp space.
+</p>
+<p>
+The Pymacs manual (either in <a href="http://pymacs.progiciels-bpi.ca/pymacs.html">HTML format</a> or <a href="http://pymacs.progiciels-bpi.ca/pymacs.pdf">PDF format</a>) has installation instructions, a full description of the API, pointers to documented examples, to resources, and to other Pymacs sites or projects.  The distribution also includes the Poor's Python Pre-Processor (<b>pppp</b>) and its manual (either in <a href="http://pymacs.progiciels-bpi.ca/pppp.html">HTML format</a> or <a href="http://pymacs.progiciels-bpi.ca/pppp.pdf">PDF format</a>).
+</p>
+<p>
+Source files and various distributions are available through <a href="https://github.com/pinard/Pymacs/">https://github.com/pinard/Pymacs/</a>.  Please report problems, comments and suggestions to <a href="mailto:pinard@iro.umontreal.ca">François Pinard</a>.
+</p>
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Notes for 0.25</h3>
+<div class="outline-text-3" id="text-1-1">
+
+<p> <a name="2012-05-07" class="target">2012-05-07</a> <span class="timestamp-wrapper"> <span class="timestamp">2012-05-07 lun</span></span> Hi everybody.
+</p>
+<p>
+Pymacs 0.25 is now available.  You may fetch it as one of:
+</p>
+<ul>
+<li><a href="https://github.com/pinard/Pymacs/tarball/v0.25">https://github.com/pinard/Pymacs/tarball/v0.25</a>
+</li>
+<li><a href="https://github.com/pinard/Pymacs/zipball/v0.25">https://github.com/pinard/Pymacs/zipball/v0.25</a>
+</li>
+</ul>
+
+
+<p>
+depending on if you want a <i>tar</i> or <i>zip</i> archive.
+</p>
+<p>
+The installation process was modified:
+</p>
+<ul>
+<li>Python 3 is now supported.  This required new installation mechanics, and a Python pre-processor written for the circumstance (named <b>pppp</b>).
+
+</li>
+<li>Pymacs now installs a single Python file instead of a Python module.  This does not affect users — except maybe a few who chose to depend on undocumented internals.
+</li>
+</ul>
+
+
+<p>
+The specifications are pretty stable.  A few additions occurred:
+</p>
+<ul>
+<li>Variable <b>pymacs-python-command</b> may select which Python interpreter to use.
+
+</li>
+<li>A <b>pymacs-auto-restart</b> variable lets the user decide what to do if the Pymacs helper aborts.
+
+</li>
+<li>The <b>Let</b> class got a <b>pops</b> method which pops everything in a single call.
+
+</li>
+<li>A new API function <b>pymacs-autoload</b> serves lazy imports.
+</li>
+</ul>
+
+
+<p>
+There also are miscellaneous changes:
+</p>
+<ul>
+<li>Some errors have been corrected, both in the code and in the manual.
+
+</li>
+<li>The Emacs Lisp source has been massaged so to become uploadable in ELPA's (Emacs Lisp Packages Archives).
+</li>
+</ul>
+
+
+<p>
+XEmacs support seems to be broken, and Jython 2.2 support does not work yet.  As I am not much of a user of either, this is kept on ice currently.  Interested collaborators and testers, contact me if you feel like pushing in these areas!
+</p>
+<p>
+Nice thanks to Pymacs contributors.  It was much fun working with you all!
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Notes for 0.24</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+<p>
+Whenever I tag a version <code>-betaN</code> or such, it might not be fully ready for public distribution, this is a welcome defect that ELPA cannot grok such versions.  Someone wanting to upload Pymacs nevertheless found his way around the limitation by renaming the version, I guess from <code>0.24-beta2</code> to <code>0.24</code>.  Undoubtedly, it would have been polite to check with me first… As beta releases come before real releases, it should really have been <code>0.23</code>.  Anyway, Marmelade now has a Pymacs 0.24.  For avoiding any more confusion, I'm skipping <code>0.24</code> — such a version does not officially exist.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Notes for 0.23</h3>
+<div class="outline-text-3" id="text-1-3">
+
+<p><a name="2008-02-15" class="target">2008-02-15</a> <span class="timestamp-wrapper"> <span class="timestamp">2008-02-15 ven</span></span> Hello to everybody, and Emacs users in the Python community.
+</p>
+<p>
+Here is Pymacs 0.23!  There has been a while, so I advise current Pymacs users to switch with caution.  All reported bugs have been squashed, if we except one about Emacs quit (<b>C-g</b>) not being obeyed gracefully.  A few suggestions have been postponed, to be pondered later.
+</p>
+<p>
+The manual is now in reST format, and everything Allout is gone.
+Postscript and PDF files are not anymore part of the distribution, you
+may find them on the Web site, or use the Makefile if you have needed
+tools.  Examples have been moved out of the manual into a new contrib/
+subdirectory, which also holds a few new contributions.  The example of
+a Python back-end for Emacs Gnus has been deleted.
+</p>
+<p>
+Python 1.5.2 compatibility has been dropped; use Python 2.2 or better.
+The Pymacs manual explains installation procedure, now simplified.  The
+pymacs-services script is gone, this should ease installing Pymacs on MS
+Windows.  There is also a small, still naive validation suite.
+</p>
+<p>
+The communication protocol has been revised: more clarity, less magic.
+Zombie objects are less dreadful by default.  The API now supports False
+and True constants, and Unicode strings (within limits set by Emacs).
+</p>
+<p>
+Special thanks to those who helped me at creating or testing this
+release.
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Informal notes</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> <span class="target">2012-05-06</span>  python-mode.el difficulty</h3>
+<div class="outline-text-3" id="text-2-1">
+
+<p> <span class="timestamp-wrapper"> <span class="timestamp">2012-05-07 lun</span></span> After I recently acquired a new machine and installed a flurry of software on it, I was saluted with:
+</p>
+<pre class="example">
+pymacs-report-error: Pymacs helper did not start within 30 seconds
+</pre>
+
+
+<p>
+The problem turns out to come from <b>python-mode.el</b> (a development copy), which insists on providing and using its own older copy of Pymacs.  The problem shows in the Pymacs communication buffer: a failed attempt at importing <code>Pymacs/__init__.py</code>.  Indeed, this file does not exist anymore.  Pymacs now stands as a single file on the Python side, not as a module.  This yields confusion at run time.  The problem vanishes if I comment out <b>python-mode.el</b> initialization, or more simply (thanks <a href="https://github.com/holmboe">holmboe</a>) if <b>py-load-pymacs-p</b> is set to <b>nil</b>.  I'll talk to Andreas Röhler about this.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> <span class="target">2012-05-07</span>  Using packagers</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<p> <span class="timestamp-wrapper"> <span class="timestamp">2012-05-07 lun</span></span> <a href="https://github.com/gleber">Gleb Peregud</a> suggests <a href="https://github.com/pinard/Pymacs/issues/18">on GitHub</a> that we prepare an ELPA/Marmalade package for Pymacs.  There is also a Python side to be addressed, and I've been lucky enough to recently meet Éric Araujo, the <b>distutils2</b> / <b>packaging</b> maintainer.  The time might be proper to push a bit on the idea on getting Pymacs on installers.
+</p>
+<p>
+I saved a few notes on <a href="Emacs.html">Emacs Packaging</a>.  After having pondering them, I'll follow Gleb's advice, at least to get started and experiment.  Emacs packagers do not care about Python, and Python packagers ignore Emacs Lisp installation problems.  The pre-processing step in Pymacs is another source of concern.  In a word, I'll save the bottle of champagne for some later time! ☺
+</p>
+<p>
+There is some complexity in installers, both on Emacs and Python sides.  It's quite amusing: proponents of either side want an installer, and dismiss as trivial the problem of installing the other side.  Emacs users tell me: <i>Set PYTHONPATH approprietely and forget about it</i>.  Python users tell me: <i>Just put pymacs.el somewhere it will work, or ask the user</i>.  My feeling is that to do nicely implies both an Emacs installer and a Python installer.  There is difference of perspective as well: for users, simplicity means <i>both</i>; for the maintainer, simplicity means <i>neither</i> ☺.
+</p></div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<div class="menu noprint"><ul>
+<li class="caption">General info</li>
+<li class="entry"><a href="/index.html">Entry page</a></li>
+<li class="entry"><a href="http://pinard.progiciels-bpi.ca/index.html">Author's site</a></li>
+<li class="entry"><a href="http://pinard.progiciels-bpi.ca/org/Powered_by.html">Powered by</a></li>
+<li class="caption">Documentation</li>
+<li class="entry"><a href="/README.html">README</a></li>
+<li class="entry"><a href="/pymacs.html">Manual</a></li>
+<li class="caption">Source files</li>
+<li class="entry"><a href="https://github.com/pinard/Pymacs">Browse</a></li>
+<li class="entry"><a href="https://github.com/pinard/Pymacs/downloads">Download</a></li>
+<li class="caption">Development</li>
+<li class="entry"><a href="/TODO.html">TODO</a></li>
+<li class="entry"><a href="/THANKS.html">Contributors</a></li>
+</ul></div>
+</div>
+</body>
+</html>

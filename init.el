@@ -1,6 +1,8 @@
 (add-to-list 'load-path "~/.emacs.d/plugins")
 (add-to-list 'load-path "~/.emacs.d/vendor")
 (add-to-list 'load-path "~/.emacs.d/emacs-color-theme-solarized")
+(global-linum-mode t)
+(column-number-mode t)
 
 (require 'dirtree)
 (require 'websearch)

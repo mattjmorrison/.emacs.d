@@ -31,3 +31,9 @@
 (add-hook 'after-make-frame-functions 'thj-reload-solarized)
 
 (global-git-gutter-mode t)
+(setq-default truncate-lines t)
+(custom-set-variables
+ '(ido-enable-last-directory-history nil)
+ '(ido-record-commands nil)
+ '(ido-max-work-directory-list 0)
+ '(ido-max-work-file-list 0))
